@@ -12,7 +12,6 @@ export default function RootLayout({
   const { data: session, status } = useSession();
 
   if (status !== "authenticated") {
-    console.log("Não está autenticado");
     redirect("/");
   }
 
