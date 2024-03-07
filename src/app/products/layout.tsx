@@ -1,4 +1,6 @@
 "use client";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import NextAuthSessionProvider from "@/providers/sessionProvider";
 import { QueryClientProviderWrapper } from "@/utils/reactQueryConfig";
 import { useSession } from "next-auth/react";
@@ -19,7 +21,11 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body>
         <QueryClientProviderWrapper>
-          <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
+          <NextAuthSessionProvider>
+            <Header loggedIn={true} />
+            {children}
+            <Footer />
+          </NextAuthSessionProvider>
         </QueryClientProviderWrapper>
       </body>
     </html>
