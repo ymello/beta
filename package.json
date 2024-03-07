@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
+    "@radix-ui/react-dialog": "^1.0.5",
     "@types/axios": "^0.14.0",
     "@types/next-auth": "^3.15.0",
     "@types/react-query": "^1.2.9",
