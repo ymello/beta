@@ -69,44 +69,48 @@ export default function ProductPage() {
     isLoadingProductsByCategory
   )
     return <div>Loading...</div>;
-  return (
-    <div className="h-full container mx-auto py-10 space-y-5">
-      <div className="bg-indigo-500 rounded-lg p-14">
-        <form onSubmit={handleSubmit(handleSearch)} className="space-y-5">
-          <label className="text-center font-bold text-white text-4xl mb-10">
-            Pesquise o produto por nome ou categoria
-          </label>
 
-          <div className="sm:flex items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between">
-            <input
-              className="text-base text-gray-400 flex-grow outline-none px-2 "
-              type="text"
-              {...register("search")}
-              placeholder="Pesquise o nome do produto"
-            />
-            <div className="ms:flex items-center px-2 rounded-lg space-x-4 mx-auto ">
-              <select
-                {...register("category")}
-                className="text-base text-gray-800 outline-none border-2 px-4 py-2 rounded-lg"
-              >
-                <option value="">Todas as categorias</option>
-                {categoriesData.map((category: string) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
-              </select>
-              <button
-                type="submit"
-                className="bg-indigo-500 text-white text-base rounded-lg px-4 py-2 font-thin"
-              >
-                Pesquisar
-              </button>
+  console.log(products);
+  return (
+    <div className="bg-white">
+      <div className="h-full container mx-auto py-10 space-y-5">
+        <div className="bg-indigo-500 rounded-lg p-14">
+          <form onSubmit={handleSubmit(handleSearch)} className="space-y-5">
+            <label className="text-center font-bold text-white text-4xl mb-10">
+              Pesquise o produto por nome ou categoria
+            </label>
+
+            <div className="sm:flex items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between">
+              <input
+                className="text-base text-gray-400 flex-grow outline-none px-2 "
+                type="text"
+                {...register("search")}
+                placeholder="Pesquise o nome do produto"
+              />
+              <div className="ms:flex items-center px-2 rounded-lg space-x-4 mx-auto ">
+                <select
+                  {...register("category")}
+                  className="text-base text-gray-800 outline-none border-2 px-4 py-2 rounded-lg"
+                >
+                  <option value="">Todas as categorias</option>
+                  {categoriesData.map((category: string) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  type="submit"
+                  className="bg-indigo-500 text-white text-base rounded-lg px-4 py-2 font-thin"
+                >
+                  Pesquisar
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
+        {products && <ProductList products={products} />}
       </div>
-      {products && <ProductList products={products} />}
     </div>
   );
 }

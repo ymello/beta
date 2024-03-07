@@ -1,7 +1,10 @@
 import React from "react";
+import { DeleteModal } from "./DeleteModal";
 import { Rating } from "./Rating";
+import { UpdateModal } from "./UpdateModal";
 
 interface CardProps {
+  id: number;
   title: string;
   description: string;
   image: string;
@@ -15,6 +18,7 @@ interface CardProps {
 }
 
 export function Card({
+  id,
   title,
   description,
   image,
@@ -50,6 +54,11 @@ export function Card({
             Desconto: {discountPercentage.toFixed(2)}%
           </p>
           <p className="text-gray-700 text-base">Estoque: {stock}</p>
+        </div>
+
+        <div className="flex items-center justify-between">
+          <DeleteModal title={title} id={id} />
+          <UpdateModal title={title} id={id} description={description} />
         </div>
       </div>
       <div className="flex justify-center mt-4 overflow-x-auto min-w-full">
