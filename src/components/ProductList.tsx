@@ -16,6 +16,11 @@ export function ProductList({ products }: ProductListProps) {
           image={product.thumbnail}
           rating={product.rating}
           tag={product.category}
+          price={product.price}
+          discountPercentage={product.discountPercentage}
+          stock={product.stock}
+          brand={product.brand}
+          images={product.images}
         />
       ))}
     </div>
