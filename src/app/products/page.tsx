@@ -70,7 +70,6 @@ export default function ProductPage() {
   )
     return <div>Loading...</div>;
 
-  console.log(products);
   return (
     <div className="bg-white">
       <div className="h-full container mx-auto py-10 space-y-5">
