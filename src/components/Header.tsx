@@ -2,6 +2,7 @@ import { signOut } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import mark from "../../public/mark.svg";
 
 interface HeaderProps {
   loggedIn: boolean;
@@ -30,9 +31,10 @@ export function Header({ loggedIn }: HeaderProps) {
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Sua Empresa</span>
             <Image
+              width={32}
               height={32}
               className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              src={mark}
               alt=""
             />
           </a>
@@ -107,9 +109,10 @@ export function Header({ loggedIn }: HeaderProps) {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Sua Empresa</span>
               <Image
+                width={32}
                 height={32}
                 className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                src={mark}
                 alt=""
               />
             </a>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import mark from "../../public/mark.svg";
 
 export function Footer() {
   return (
@@ -7,9 +8,10 @@ export function Footer() {
       <div className="bg-black/5 p-4 text-center text-surface dark:text-white">
         <a className="py-5">
           <Image
+            width={32}
             height={32}
             className="h-8 w-auto mx-auto"
-            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            src={mark}
             alt=""
           />
         </a>
