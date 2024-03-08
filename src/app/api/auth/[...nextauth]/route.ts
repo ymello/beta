@@ -10,7 +10,7 @@ const nextAuthOptions = {
         username: { label: "Usuário", type: "text" },
         password: { label: "Senha", type: "password" },
       },
-      authorize: async (credentials, req) => {
+      authorize: async (credentials) => {
         try {
           const response = await axiosInstance.post("/auth/login", credentials);
 
@@ -42,4 +42,4 @@ const nextAuthOptions = {
 
 const handler = NextAuth(nextAuthOptions);
 
-export { handler as GET, handler as POST, nextAuthOptions };
+export { handler as GET, handler as POST };
