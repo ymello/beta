@@ -1,8 +1,8 @@
 import axiosInstance from "@/utils/axiosConfig";
-import NextAuth, { NextAuthOptions } from "next-auth";
+import NextAuth from "next-auth";
 import CredencialsProvider from "next-auth/providers/credentials";
 
-const nextAuthOptions: NextAuthOptions = {
+const nextAuthOptions = {
   providers: [
     CredencialsProvider({
       name: "credentials",
@@ -29,11 +29,11 @@ const nextAuthOptions: NextAuthOptions = {
     signIn: "/",
   },
   callbacks: {
-    async jwt({ token, user }) {
+    async jwt({ token, user }: any) {
       user && (token.user = user);
       return token;
     },
-    async session({ session, token }) {
+    async session({ session, token }: any) {
       session = token.user as any;
       return session;
     },
