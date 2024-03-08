@@ -1,4 +1,5 @@
 import { signOut } from "next-auth/react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
@@ -28,7 +29,8 @@ export function Header({ loggedIn }: HeaderProps) {
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Sua Empresa</span>
-            <img
+            <Image
+              height={32}
               className="h-8 w-auto"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
               alt=""
@@ -104,7 +106,8 @@ export function Header({ loggedIn }: HeaderProps) {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Sua Empresa</span>
-              <img
+              <Image
+                height={32}
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 alt=""

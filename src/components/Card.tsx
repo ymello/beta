@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { DeleteModal } from "./DeleteModal";
 import { Rating } from "./Rating";
@@ -32,7 +33,7 @@ export function Card({
 }: CardProps) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
-      <img className="w-full" src={image} alt="" />
+      <Image className="w-full" src={image} alt="" />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
         <p className="text-gray-700 text-base">{description}</p>
@@ -63,7 +64,9 @@ export function Card({
       </div>
       <div className="flex justify-center mt-4 overflow-x-auto min-w-full">
         {images.map((urlImagem, índice) => (
-          <img
+          <Image
+            width={80}
+            height={80}
             key={índice}
             className="w-20 h-20 object-cover mx-2 my-2"
             src={urlImagem}
