@@ -4,6 +4,7 @@ import type { AuthOptions } from "next-auth";
 import CredencialsProvider from "next-auth/providers/credentials";
 
 const nextAuthOptions: AuthOptions = {
+  secret: process.env.NEXTAUTH_URL,
   providers: [
     CredencialsProvider({
       name: "credentials",
